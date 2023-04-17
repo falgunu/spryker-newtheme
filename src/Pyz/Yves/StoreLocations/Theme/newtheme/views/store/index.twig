@@ -1,0 +1,114 @@
+{% extends template('page-layout-main') %}
+
+{% define formdata = {
+    storeform: _view.storeLocationsForm,
+} %}
+{% if _view.storedata is defined %}
+    {% define storedata={
+        stores:_view.storedata,
+    } %}
+{% endif %}
+
+{% block title %}
+    <h1 class="title title--main title--with-border title--medium">Search Store</h1>
+{% endblock %}
+
+{% block content %}
+
+    <div class="grid grid--no-wrap">
+        {{ form_start(formdata.storeform) }}
+        <div class="col col--expand">
+            {{ form_row(formdata.storeform.query) }}
+            <br>
+            <button type="submit" class="button button--large button--expand">Search</button>
+        </div>
+    </div>
+    {{ form_errors(formdata.storeform) }}
+    {{ form_end(formdata.storeform) }}
+    <br>
+    {% if storedata is defined %}
+			<div class="store-locator-map">
+				<div class="row-details">
+					<div class="sidebar-details">
+						<div class="col col--sm-12 col--md-6">
+							<div id="country-name" class="country-details">
+							
+
+        {% for key,value in storedata.stores %}
+
+			
+				<div class="search-result-item">
+					<div class="search-result-title"><a href="#"> {{ value.storename }} </a></div>
+                    <div class="search-result-full-address">
+                                <div class="search-result-address-street"> {{ value.street }}</div>
+								<div class="search-result-address-city">{{ value.city }},{{ value.region }},{{ value.country }},{{ value.zipcode }}</div>
+                            <div class="search-result-small-links">
+                                <a class="get-directions" href="">Get Directions</a>
+                            </div>
+							<div class="search-result-buttons">
+								<a href="/mo/eldon/049/">
+									<button class="pagebuilder-button-primary">SEE STORE DETAILS</button>
+								</a>
+							</div>
+						<div class="table-responsive">
+							<div class="card">
+								<table class="table table-borderless table-sm">
+									<thead class="today-click">
+										<tr class="dt-table">
+											<td class="head-day">OPEN TODAY</td>
+											<td class="head-time">
+												<span class="desktop-tablet">08:00AM - 08:00PM</span>
+											</td>
+										</tr>
+										<tr class="mobile-table">
+											<th colspan="2" class="head-day">
+												<span style="display:block">OPEN TODAY</span>
+												<span class="head-time" style="display:block">08:00AM - 08:00PM</span>
+											</th>
+										</tr>
+									</thead>
+									<tbody style="display: none;">
+										<tr class="">
+											<td class="table-day top-cell">Monday</td>
+											<td class="table-time top-cell">08:00AM - 08:00PM</td>
+										</tr>
+										<tr class="current-day">
+											<td class="table-day">Tuesday</td>
+											<td class="table-time">08:00AM - 08:00PM</td>
+										</tr>
+										<tr class="">
+											<td class="table-day">Wednesday</td>
+											<td class="table-time">08:00AM - 08:00PM</td>
+										</tr>
+										<tr class="">
+											<td class="table-day">Thursday</td>
+											<td class="table-time">08:00AM - 08:00PM</td>
+										</tr>
+										<tr class="">
+											<td class="table-day">Friday</td>
+											<td class="table-time">08:00AM - 08:00PM</td>
+										</tr>
+										<tr class="">
+											<td class="table-day">Saturday</td>
+											<td class="table-time">08:00AM - 08:00PM</td>
+										</tr>
+										<tr class="">
+											<td class="table-day bottom-cell">Sunday</td>
+											<td class="table-time bottom-cell">09:00AM - 06:00PM</td>
+										</tr>
+									</tbody>
+									</table>
+								</div>
+							</div>
+                 	   	</div>
+              	 	 </div>
+				
+					
+        {% endfor %}
+						</div>
+					</div>
+               	 </div>
+            </div>
+		</div>
+    {% endif %}
+{% endblock %}

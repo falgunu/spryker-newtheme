@@ -1,0 +1,29 @@
+{% extends model('component') %}
+
+{% define config = {
+    name: 'keen-slider',
+    tag: 'keen-slider'
+} %}
+
+{% define data = {
+    slides: []
+} %}
+
+{% define attributes = {
+    'slider-config': '{}'
+} %}
+
+{% block body %}
+    <div id="my-keen-slider" class="keen-slider">
+        
+               <div className="keen-slider__slide"><img src="https://picsum.photos/1400/600?random=1" alt="Slide 1"></div>
+              <div className="keen-slider__slide"><img src="https://picsum.photos/1400/600?random=2" alt="Slide 2"></div>
+              <div className="keen-slider__slide"><img src="https://picsum.photos/1400/600?random=3" alt="Slide 3"></div>
+        
+    </div>
+    <script>
+      var slider = new KeenSlider('#my-keen-slider')
+</script>
+{% endblock %}
+
+

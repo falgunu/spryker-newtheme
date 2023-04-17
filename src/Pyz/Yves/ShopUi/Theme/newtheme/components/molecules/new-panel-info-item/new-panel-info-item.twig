@@ -1,0 +1,49 @@
+{% extends model('component') %}
+
+{# {% define config = {
+    name: 'new-panel-info-item',
+} %} #}
+
+{% define data = {
+    info: required
+} %}
+
+{% block body %}
+<ul class="col grid grid--nowrap grid--stretch navigation-top__actions">
+     <li class="turckSite up"><a href="https://www.turck.com">Turck.com</a></li>
+
+        <li class="turckUrl up"><a href="https://connect.turck.us" target="_blank">TURCK CONNECT</a></li>
+
+        <li class="turckPhone"> <a href="tel:+18005447769" class="turckHotline"><span>(800) 544-7769&zwj;</span></a></li>
+
+        <li><a href="https://www.turck.us/en/contact-turck-114.php"class="turckCAfr"><span class="divider"><span><span>Contact Turck</span></a></li>
+
+        <li><a href="/en/contacts-139.php" class="repLocator">Rep Locator</a></li>
+
+        {% if can('SeePricePermissionPlugin') %}
+            <li class="col {{ config.name }}__action-item">
+                {% widget 'PriceModeSwitcherWidget' only %}{% endwidget %}
+            </li>
+            <li class="col {{ config.name }}__action-item">
+                {% widget 'CurrencyWidget' only %}{% endwidget %}
+            </li>
+        {% endif %}
+
+        <li class="col {{ config.name }}__action-item">
+            {% widget 'LanguageSwitcherWidget' args [app.request.pathInfo, app.request.queryString, app.request.requestUri] only %}{% endwidget %}
+        </li>
+
+        {% set menuItemCompanyWidget = findWidget('MenuItemCompanyWidget') %}
+        {% set hasCompanyAccess = menuItemCompanyWidget.hasCompanyAccess %}
+
+        {% if is_granted('ROLE_USER') and hasCompanyAccess %}
+            {% widget menuItemCompanyWidget %}
+                {% block template %}
+                    <li class="col {{ config.name }}__action-item">
+                        {% apply spaceless %}{{ parent() }}{% endapply %}
+                    </li>
+                {% endblock %}
+            {% endwidget %}
+        {% endif %}
+</ul>
+{% endblock %}

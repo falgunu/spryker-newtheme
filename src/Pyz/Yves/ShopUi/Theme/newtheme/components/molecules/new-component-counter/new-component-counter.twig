@@ -1,0 +1,35 @@
+{% extends model('component') %}
+
+{% define config = {
+    name: 'new-component-counter',
+    tag: 'new-component-counter'
+} %}
+
+{% define data = {
+    name: required,
+    description: 'no description'
+} %}
+
+{% define attributes = {
+    'element-selector': required
+} %}
+
+
+
+{% block body %}
+
+	<strong class="keen-slider {{config.name}}__name">
+		{{data.name}}
+	</strong>
+	<em class="{{config.name}}__description">
+		{% if data.description is not empty %}
+			{{data.description}}
+		{% endif %}
+	</em>
+	{% block counter %}
+		Found
+		<strong class="{{config.name}}__counter {{config.jsName}}__counter"></strong>
+		elements
+	{% endblock %}
+
+{% endblock %}

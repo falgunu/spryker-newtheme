@@ -1,0 +1,180 @@
+@mixin storelocations($name: '.storelocations') {
+
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+.store-locator-map {
+    padding: 0 40px;
+
+    .row-map {
+        .heading {
+            border-bottom: 3px solid #434343;
+            margin-right: 30px;
+            padding-bottom: 15px;
+            width: 40%;
+
+            h1 {
+                font-size: 40px;
+                color: #a21e4b;
+                font-weight: 700;
+                margin-bottom: 0;
+                font-family: 'Roboto Slab';
+            }
+
+            h2 {
+                margin-bottom: 0px;
+                font-size: 22px;
+                margin-top: 10px;
+                font-weight: 700;
+                font-family: 'Roboto Slab';
+            }
+        }
+    }
+
+    .country-details {
+        height: 650px;
+        overflow: auto;
+        position: relative;
+        padding-right: 30px;
+    }
+
+    .row-details {
+        margin-top: 15px;
+
+        .sidebar-details {
+            .country-details {
+                .search-result-item {
+                    padding-left: 50px;
+                    padding-top: 20px;
+                    padding-bottom: 20px;
+                    border-bottom: 1px solid #000;
+
+                    a {
+                        font-size: 22px;
+                        color: #a21f4b;
+                        position: relative;
+                        font-weight: 700;
+                        font-family: "Roboto Slab";
+                        text-decoration: none;
+                    }
+
+                    span.distance {
+                        float: right;
+                        width: 70%;
+                        margin-top: 6px;
+                    }
+
+                    .search-result-small-links {
+                        a .get-directions::before {
+                            content: url(https://stores.orschelnfarmhome.com/assets/images/icons/Directions.svg);
+                            margin-right: 4px;
+                        }
+                    }
+                }
+
+                .search-result-buttons {
+                    .pagebuilder-button-primary {
+                        background: #a21f4b;
+                        border: 2px solid #a21f4b;
+                        color: #fff;
+                        display: inline-block;
+                        font-family: 'Roboto Slab';
+                        font-weight: 700;
+                        padding: 7px 15px;
+                        font-size: 1.2rem;
+                        box-sizing: border-box;
+                        vertical-align: middle;
+                        border-radius: 5px;
+                        width: 40%;
+                    }
+                }
+
+                .search-result-full-address {
+                    line-height: 1.4rem;
+                    margin: 5px 0 5px;
+                }
+
+                .search-result-small-links {
+                    font-size: 18px;
+                    padding: 5px 0 10px 0;
+                    font-family: "Roboto";
+
+                    a.get-directions,
+                    .phone-number {
+                        text-decoration: none;
+                        color: #a21e4b;
+                    }
+                }
+
+                .table-responsive {
+                    margin-top: 10px;
+
+                    .card {
+                        background-color: #f2f2f2;
+                        border-radius: 5px;
+                        border: none;
+                        box-shadow: 0 1px 4px 0 rgb(0 0 0 / 25%);
+                        width: 40%;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+.head-day {
+    padding: 10px 0 10px 20px;
+    font-weight: 700;
+    color: #434343;
+}
+
+td.head-time.active {
+    padding-left: 40px;
+}
+
+
+.search-result-item::before {
+    background-image: url(https://stores.orschelnfarmhome.com/assets/images/icons/Pins-Location.svg);
+    position: absolute;
+    left: 0;
+    // top: 13px;
+    content: counter(sec-counter);
+    width: 50px;
+    height: 50px;
+    background-repeat: no-repeat;
+    text-align: center;
+    font-size: 16px;
+    padding-top: 8px;
+    padding-right: 13px;
+    font-weight: 700;
+    color: #a21e4b;
+}
+
+.search-result-small-links {
+    .get-directions::before {
+        content: url(https://stores.orschelnfarmhome.com/assets/images/icons/Directions.svg);
+        margin-right: 4px;
+    }
+
+    .phone-number::before {
+        content: url(https://stores.orschelnfarmhome.com/assets/images/icons/Phone.svg);
+        margin-left: 10px;
+        margin-right: 5px;
+        position: relative;
+        top: 2px;
+    }
+}
+
+.collapse-details {
+    td {
+        padding-left: 20px;
+    }
+}
+
+}
+
+@include storelocations;

@@ -1,0 +1,54 @@
+{% extends template('page-layout-main') %}
+
+{% define formdata = {
+    storeform: _view.storeLocationsForm,
+} %}
+{% if _view.storedata is defined %}
+    {% define storedata={
+        stores:_view.storedata,
+    } %}
+{% endif %}
+
+{% block title %}
+    <h1 class="title title--main title--with-border title--medium">Search Store</h1>
+{% endblock %}
+
+{% block content %}
+
+    <div class="grid grid--no-wrap">
+        {{ form_start(formdata.storeform) }}
+        <div class="col col--expand">
+            {{ form_row(formdata.storeform.query) }}
+            <br>
+            <button type="submit" class="button button--large button--expand">Search</button>
+        </div>
+    </div>
+    {{ form_errors(formdata.storeform) }}
+    {{ form_end(formdata.storeform) }}
+    <br>
+    {% if storedata is defined %}
+        {% for key,value in storedata.stores %}
+            <div class="navigation-item col col--sm-12 col--md-5"
+                 style="border: solid 2px blueviolet;padding: 11px;margin:15px;">
+                <h5 class="title title--footer">
+                    {{ value.storename }}
+                </h5>
+                <div class="js-navigation-footer-top-categories__target is-hidden-sm-only">
+                    <img src="data:image/*;base64,{{ value.storeimage }}" class="img-small" alt="{{ value.storename }}"
+                         style="width: 100%;height: 200px;"/>
+                    <nav class="navigation-list navigation-list--secondary navigation-list--footer">
+                        <ul class="list list--secondary list--footer" style="display:flex;">
+                            <li class="node node--secondary node--footer list__item">
+                                <p><b>Address:</b>{{ value.storename }},{{ value.street }},{{ value.city }}
+                                    ,{{ value.region }},{{ value.country }} - {{ value.zipcode }}</p>
+                            </li>
+                            <li class="node node--secondary node--footer list__item">
+                                <a class="button btn-success" href="">Get Directions</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endblock %}

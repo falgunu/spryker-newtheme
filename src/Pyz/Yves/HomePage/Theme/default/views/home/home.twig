@@ -62,8 +62,16 @@
             </div>
         {% endblock %}
     {% endembed %}
+        {% block hompagecontent %}
+        {# <div class="grid grid--left grid--middle">
+                {% embed molecule('homepagecontent') %}{% endembed %}
+        </div> #}
+        {{ spyCmsBlock({name: 'homepage-top-banner-new'}) }}
+        <div class="countdown"></div>
+        {% endblock %}
 {% endblock %}
 
 {% block contentBottom %}
     {% cms_slot 'slt-5' %}
+    {{ spyCmsBlock({name: 'homepage-bottom-block'}) }}
 {% endblock %}

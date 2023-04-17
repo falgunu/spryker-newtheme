@@ -1,12 +1,30 @@
 {
+    "ProductGroupWidgetProjectDefault/*": ["./src/Pyz/Yves/ProductGroupWidget/Theme/default/*"],
     "path": "assets/%SPRYKER_BUILD_HASH%/%theme%",
     "staticPath": "assets/static",
     "namespaces": [
         {
+            "moduleSuffix":"DE",
             "codeBucket": "",
-            "namespace": "",
-            "themes": [],
+            "namespace": "DE",
+            "themes": ["newtheme"],
+            "defaultTheme": "default"
+        },
+        {
+            "moduleSuffix":"AT",
+            "codeBucket": "",
+            "namespace": "AT",
+            "themes": ["newtheme"],
+            "defaultTheme": "default"
+        },
+        {
+            "moduleSuffix":"US",
+            "codeBucket": "",
+            "namespace": "US",
+            "themes": ["newtheme"],
             "defaultTheme": "default"
         }
     ]
 }
+
+

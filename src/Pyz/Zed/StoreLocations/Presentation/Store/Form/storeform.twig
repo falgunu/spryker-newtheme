@@ -1,0 +1,92 @@
+{# storeform.twig #}
+<form method="POST" action="{{ actionurl }}" enctype="multipart/form-data">
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            <label for="storename">Store Name</label>
+            <input type="text" class="form-control" id="storename" name="storename" placeholder="Store Name"
+                {% if storedata is defined %}
+                    value="{{ storedata.storename }}"
+                {% endif %}
+                   required>
+        </div>
+    </div>
+    <div class="form-row">
+        <h3>Address Details</h3>
+        <div class="form-group col-md-6">
+            <label for="city">City</label>
+            <input type="text" class="form-control" id="city" placeholder="City/Area/Locality" name="city"
+                {% if storedata is defined %}
+                    value="{{ storedata.city }}"
+                {% endif %}
+                   required>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="street">Street No.</label>
+            <input type="text" class="form-control" id="street" placeholder="Street No." name="street"
+                {% if storedata is defined %}
+                    value="{{ storedata.street }}"
+                {% endif %}
+                   required>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="region">Region/State</label>
+            <input type="text" class="form-control" id="region" name="region"
+                {% if storedata is defined %}
+                    value="{{ storedata.region }}"
+                {% endif %}
+                   required>
+        </div>
+        <div class="form-group col-md-4">
+            <label for="country">Country</label>
+            <select id="country" class="form-control" name="country" required>
+                {% for countryname in country %}
+                    {% if storedata is defined and countryname == storedata.country %}
+                        <option value="{{ storedata.country }}" selected>{{ storedata.country }}</option>
+                    {% else %}
+                        <option value="{{ countryname }}">{{ countryname }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group col-md-2">
+            <label for="inputZip">Zip</label>
+            <input type="number" class="form-control" id="inputZip" name="zipcode"
+                {% if storedata is defined %}
+                    value="{{ storedata.zipcode }}"
+                {% endif %}
+                   required>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <label for="region">Latitude</label>
+            <input type="number" class="form-control" id="latitude" name="latitude"
+                {% if storedata is defined %}
+                    value="{{ storedata.latitude }}"
+                {% endif %}
+                   required>
+        </div>
+        <div class="form-group col-md-4">
+            <label for="region">Longitude</label>
+            <input type="number" class="form-control" id="longitude" name="longitude"
+                {% if storedata is defined %}
+                    value="{{ storedata.longitude }}"
+                {% endif %}
+                   required>
+        </div>
+        <div class="form-group col-md-4">
+            <label for="region">Store Image</label>
+            <input type="file" class="form-control" id="image" accept="image/*" name="storeimage"
+
+                {% if storedata is defined %}
+            >
+            {% else %}
+                required >
+            {% endif %}
+
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+</form>

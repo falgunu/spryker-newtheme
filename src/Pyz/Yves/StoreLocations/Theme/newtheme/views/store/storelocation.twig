@@ -1,0 +1,7 @@
+{% extends model('component') %}
+
+{% include molecule('script-loader') with {
+	attributes: {
+		src: 'https://cdnjs.cloudflare.com/ajax/libs/rwd-image-maps/1.6/jquery.rwdImageMaps.min.js',
+		},
+} only %}

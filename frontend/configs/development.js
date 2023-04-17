@@ -202,7 +202,14 @@ const getConfiguration = async appSettings => {
 
                     errors.forEach(error => console.log(error.message));
                     process.exit(1);
-                })
+                }),
+
+                new webpack.ProvidePlugin({
+                    // jquery global
+                    $: 'jquery',
+                    'window.jQuery': 'jquery',
+                    'window.$': 'jquery'
+                  }),
             ]
         }
     };

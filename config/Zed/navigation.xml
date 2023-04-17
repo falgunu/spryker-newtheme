@@ -9,6 +9,30 @@
         <action>index</action>
         <icon>fa-chart-area</icon>
     </dashboard>
+     <store-locations>
+              <label>Store Locations</label>
+              <title>Store Locations</title>
+              <bundle>store-locations</bundle>
+              <icon>fa-store</icon>
+              <pages>
+                 <viewedit-store>
+                      <label>View/Edit Store</label>
+                      <title>View/Edit Store</title>
+                      <bundle>store-locations</bundle>
+                      <controller>store</controller>
+                      <action>index</action>
+                      <visible>1</visible>
+                  </viewedit-store>
+                  <add-store>
+                      <label>Add Store</label>
+                      <title>Add Store</title>
+                      <bundle>store-locations</bundle>
+                      <controller>store</controller>
+                      <action>addnewstore</action>
+                      <visible>1</visible>
+                  </add-store>
+              </pages>
+      </store-locations>
     <sales>
         <label>Sales</label>
         <uri>/sales</uri>

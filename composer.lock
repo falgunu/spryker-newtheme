@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1baa187f4d54629ff5a953ddfa2e08f2",
+    "content-hash": "7d3f48d05c44e24ac272193f95ffcd8e",
     "packages": [
         {
             "name": "async-aws/core",
@@ -626,6 +626,43 @@
                 }
             ],
             "time": "2022-02-28T11:07:21+00:00"
+        },
+        {
+            "name": "echidna/cartsubtotal",
+            "version": "v0.0.3-alpha",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/chandanspy/CartSubTotalClient.git",
+                "reference": "d2a7862d0e298990a6d75787cfe72ea0f7952cd8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/chandanspy/CartSubTotalClient/zipball/d2a7862d0e298990a6d75787cfe72ea0f7952cd8",
+                "reference": "d2a7862d0e298990a6d75787cfe72ea0f7952cd8",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Echidna\\": "src/Echidna"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Chandan Kumar",
+                    "email": "chandan.k@echidnainc.com"
+                }
+            ],
+            "description": "To fetch the subtotal amount of cart",
+            "support": {
+                "issues": "https://github.com/chandanspy/CartSubTotalClient/issues",
+                "source": "https://github.com/chandanspy/CartSubTotalClient/tree/v0.0.3-alpha"
+            },
+            "time": "2023-04-12T20:54:17+00:00"
         },
         {
             "name": "egulias/email-validator",

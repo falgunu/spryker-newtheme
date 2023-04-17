@@ -1,0 +1,229 @@
+@mixin store-locations($name: '.storelocations') {
+
+
+    .store-locator-map {
+        padding: 0 40px;
+    
+        .row-map {
+            .heading {
+                border-bottom: 3px solid #434343;
+                margin-right: 30px;
+                padding-bottom: 15px;
+                width: 40%;
+    
+                h1 {
+                    font-size: 40px;
+                    color: #a21e4b;
+                    font-weight: 700;
+                    margin-bottom: 0;
+                    font-family: 'Roboto Slab';
+                }
+    
+                h2 {
+                    margin-bottom: 0px;
+                    font-size: 22px;
+                    margin-top: 10px;
+                    font-weight: 700;
+                    font-family: 'Roboto Slab';
+                }
+            }
+        }
+    
+        .country-details {
+            height: 650px;
+            overflow: auto;
+            position: relative;
+            padding-right: 30px;
+        }
+    
+        .row-details {
+            margin-top: 15px;
+    
+            .sidebar-details {
+                .country-details {
+                    .search-result-item {
+                        .table-borderless{
+                            .head-day {
+                                padding: 10px 0 10px 20px;
+                                font-weight: 700;
+                                color: #434343;
+                            }
+                            .head-time:after{
+                                content: url(../images/icons/Chevron-Up.svg);
+                                transform: rotate(180deg);
+                                transition: .5s;
+                                position: absolute;
+                                top: 9px;
+                                right: 10px;
+                                cursor: pointer;
+                                height: 30px;
+                            }
+                            .mobile-table{
+                                display: none;
+                            }
+                        }
+                        margin-left: 30px;
+                        padding-top: 20px;
+                        padding-bottom: 20px;
+                        border-bottom: 1px solid #000;
+    
+                        a {
+                            font-size: 22px;
+                            color: #a21f4b;
+                            position: relative;
+                            font-weight: 700;
+                            font-family: "Roboto Slab";
+                            text-decoration: none;
+                        }
+    
+                        span.distance {
+                            float: right;
+                            width: 70%;
+                            margin-top: 6px;
+                        }
+    
+                        .search-result-small-links {
+                            .get-directions::before {
+                                content: url(https://stores.orschelnfarmhome.com/assets/images/icons/Directions.svg);
+                                margin-right: 4px;
+                            }
+                        }
+                    }::before {
+                        background-image: url(/Store-Locator/images/Pins-location.svg);
+                        background-repeat: no-repeat;
+                    }
+    
+                    .search-result-buttons {
+                        .pagebuilder-button-primary {
+                            background: #a21f4b;
+                            border: 2px solid #a21f4b;
+                            color: #fff;
+                            display: inline-block;
+                            font-family: 'Roboto Slab';
+                            font-weight: 700;
+                            padding: 7px 15px;
+                            font-size: 1.2rem;
+                            box-sizing: border-box;
+                            vertical-align: middle;
+                            border-radius: 5px;
+                            margin-right: 10px;
+                            height: 50px;
+                            width: 100%;
+                        }
+                    }
+    
+                    .search-result-full-address {
+                        line-height: 1.4rem;
+                        margin: 5px 0 5px;
+                    }
+    
+                    .search-result-small-links {
+                        font-size: 18px;
+                        padding: 5px 0 10px 0;
+                        font-family: "Roboto";
+    
+                        a.get-directions,
+                        .phone-number {
+                            text-decoration: none;
+                            color: #a21e4b;
+                        }
+                    }
+    
+                    .table-responsive {
+                        margin-top: 10px;
+                        display: block;
+                        width: 100%;
+                        overflow-x: auto;
+                        .table thead{
+                            background-color: #f2f2f2;
+                        }
+    
+                        .card {
+                            background-color: #f2f2f2;
+                            border-radius: 5px;
+                            border: none;
+                            box-shadow: 0 1px 4px 0 rgb(0 0 0 / 25%);
+                        }
+                    }
+    
+                }
+            }
+        }
+    }
+    
+    .head-day {
+        padding: 10px 0 10px 20px;
+        font-weight: 700;
+        color: #434343;
+    }
+    td.head-time.active {
+        padding-left: 50px;
+    }
+    
+    
+    .search-result-item::before {
+        background-image: url(https://stores.orschelnfarmhome.com/assets/images/icons/Pins-Location.svg);
+        position: absolute;
+        left: 0;
+        top: 13px;
+        content: counter(sec-counter);
+        width: 50px;
+        height: 50px;
+        background-repeat: no-repeat;
+        text-align: center;
+        font-size: 16px;
+        padding-top: 8px;
+        padding-right: 13px;
+        font-weight: 700;
+        color: #a21e4b;
+    }
+    
+    .accordion {
+        background-color: #eee;
+        color: #444;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+        transition: 0.4s;
+      }
+      
+    //   .active, .accordion:hover {
+    //     background-color: #ccc;
+    //   }
+      
+      .accordion:after {
+        content: '\002B';
+        color: #777;
+        font-weight: bold;
+        float: right;
+        margin-left: 5px;
+      }
+      
+      .active:after {
+        content: url(https://stores.orschelnfarmhome.com/assets/images/icons/Chevron-Up.svg);
+        margin: 0 24px 0;
+      }
+      
+      .panel {
+        padding: 0 18px;
+        background-color: white;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+      }
+
+      .store-locator-map .navigation-item{
+        border: solid 2px blueviolet;
+        padding: 11px;
+        margin:15px;
+      }
+      new-component-counter.custom-element.new-component-counter.new-component-counter--big {
+        display: none;
+    }
+}
+
+@include store-locations;

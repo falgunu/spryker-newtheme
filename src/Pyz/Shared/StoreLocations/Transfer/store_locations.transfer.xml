@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<transfers xmlns="spryker:transfer-01"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="spryker:transfer-01 http://static.spryker.com/transfer-01.xsd">
+    <transfer name="StoreLocations">
+        <property name="idstore" type="int"/>
+        <property name="storename" type="string"/>
+        <property name="street" type="string"/>
+        <property name="city" type="string"/>
+        <property name="region" type="string"/>
+        <property name="country" type="string"/>
+        <property name="zipcode" type="string"/>
+        <property name="longitude" type="string"/>
+        <property name="latitude" type="string"/>
+        <property name="storeimage" type="string"/>
+    </transfer>
+    <transfer name="StoreLocationsdata">
+        <property name="data" type="[]"/>
+    </transfer>
+    <transfer name="Storelocationsquery">
+        <property name="query" type="string"/>
+    </transfer>
+</transfers>
+
