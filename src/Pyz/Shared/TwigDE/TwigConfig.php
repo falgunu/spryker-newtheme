@@ -10,6 +10,6 @@ class TwigConfig extends SprykerTwigConfig
      */
     public function getYvesThemeName(): string
     {
-        return 'newtheme';
+        return 'echidna';
     }
 }

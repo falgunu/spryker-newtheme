@@ -7,21 +7,21 @@
             "moduleSuffix":"DE",
             "codeBucket": "",
             "namespace": "DE",
-            "themes": ["newtheme"],
+            "themes": ["echidna"],
             "defaultTheme": "default"
         },
         {
             "moduleSuffix":"AT",
             "codeBucket": "",
             "namespace": "AT",
-            "themes": ["newtheme"],
+            "themes": ["echidna"],
             "defaultTheme": "default"
         },
         {
             "moduleSuffix":"US",
             "codeBucket": "",
             "namespace": "US",
-            "themes": ["newtheme"],
+            "themes": ["echidna"],
             "defaultTheme": "default"
         }
     ]

@@ -48,7 +48,7 @@
             }
 
             @include helper-breakpoint-media-min($xl) {
-                padding-right: rem(58);
+                padding-left: rem(58);
             }
             img{
                 vertical-align: middle;
@@ -62,7 +62,7 @@
 
             @include helper-breakpoint-media-min($lg) {
                 min-height: rem(114);
-                padding: rem(30) 0 rem(30) 0;
+                padding: rem(65) 0 rem(30) 0;
             }
 
             &--checkout {
@@ -159,7 +159,7 @@
 
             @include helper-breakpoint-media-min($xl) {
                 width: auto;
-                padding: 0 0 0 rem(43);
+                padding: 0 rem(43) 0 0;
             }
         }
 
